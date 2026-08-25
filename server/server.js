@@ -9,7 +9,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 connectDB();
-// app.use('/api/tasks', taskRouter);
+
+app.use(express.json());
+app.use('/api/tasks', taskRouter);
 
 app.get('/', (req, res)=>{
     res.send('Welcome to the Task Management');
