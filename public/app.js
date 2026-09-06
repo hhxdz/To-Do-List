@@ -17,6 +17,15 @@ const emptyState = document.querySelector('#empty-state');
 const filterButtons = document.querySelectorAll('.filter-btn');
 const sortSelect = document.querySelector('#sort-by');
 
+const imageInp = document.getElementById('bg-img-inp');
+const bgImgBtn = document.querySelector('.bg-custom-btn');
+
+const changeBgModal = document.querySelector('.change-bg-modal');
+
+const openModalBtns = document.querySelectorAll('.open-modal-btn');
+const modalBg = document.querySelector('.modal-bg');
+const modals = document.querySelectorAll('.modal')
+
 document.addEventListener('DOMContentLoaded', ()=>{
     setupEventListeners();
 })
@@ -61,3 +70,35 @@ async function createTask(taskData) {
         
     }
 }
+
+bgImgBtn.addEventListener('click', ()=>{
+    imageInp.click();
+})
+
+// changeBgBtn.addEventListener('click', ()=>{
+//     changeBgModal.style.display = 'block';
+// })
+
+
+function closeAllModals(){
+    modals.forEach(modal =>{
+        modal.style.display = 'none';
+    })
+    modalBg.classList.remove('modal-open')
+}
+    
+openModalBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const modalClass = btn.getAttribute('data-modal-class');
+        const modal = document.querySelector(`.${modalClass}`);
+        console.log(modal);
+        
+        modal.style.display = 'block';
+        modalBg.classList.add('modal-open')
+    });
+});
+
+modalBg.addEventListener('click', closeAllModals)
+document.addEventListener('keydown', (event)=>{
+    if(event.key === 'Escape') closeAllModals();
+})

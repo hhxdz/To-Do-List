@@ -8,10 +8,47 @@
     
 </head>
 <body>
+    <div class="modal-bg">
+
+    </div>
+    <div class="change-bg-modal modal" style="display: none;">
+        <div class="change-bg-container">
+             <div class="top-panel">
+                <h3>Change background</h3>
+                <button class="close-modal-btn" onclick="closeAllModals()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="default-bg-types">
+            <div class="type-container">
+                <img src="./images/photos-opt.jpg" alt="photos" class="bg-type-img">
+                <p>Photos</p>
+            </div>
+            <div class="type-container">
+                <img src="./images/color-gradient.jpg" alt="color gradient" class="bg-type-img">
+                <p>Colors</p>
+            </div>
+        </div>
+        <hr class="modal-line">
+            <h4>Custom</h4>
+            <input type="file" accept="image/*" id="bg-img-inp" hidden>
+            <button class="bg-type-img bg-custom-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--text-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+            </button>
+    </div>
+
+
     <div class="container">
         <header class="header">
-            <h1>My Tasks</h1>
-            <p class="subtitle">Task List</p>
+            <div class="header-text">
+                <h1>My Tasks</h1>
+                <p class="subtitle">Task List</p>
+            </div>
+            <button class="change-bg-btn open-modal-btn header-btn" data-modal-class="change-bg-modal">
+                <svg  xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wallpaper-icon lucide-wallpaper"><path d="M12 17v4"/><path d="M8 21h8"/><path d="m9 17 6.1-6.1a2 2 0 0 1 2.81.01L22 15"/><circle cx="8" cy="9" r="2"/><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
+            </button>
+            
         </header>
 
         <div class="add-task-section">
