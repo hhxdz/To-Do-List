@@ -498,3 +498,28 @@ select:focus {
         gap: 5px;
     }
 }
+
+#toast{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    color: var(--white);
+    font-weight: 500;
+    transform: translateX(400px);
+    transition: transform 0.3 ease;
+    z-index: 1000;
+    max-width: 400px;
+    box-shadow: var(--shadow);
+}
+
+#toast.show{
+    transform: translateX(0);
+}
+#toast.success{
+    background-color: var(--low);
+}
+#toast.error{
+    background-color: var(--high);
+}

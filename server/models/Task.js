@@ -16,14 +16,14 @@ const taskSchema = new mongoose.Schema({
         enum: ['low', 'medium', 'high'],
         default: 'medium'
     },
-    data:{
+    date:{
         type: String,
         default: new Date().toISOString().split('T')[0],
         required: true
     },
     createdAt: {
-        type: Date,
-        default: new Date()
+        type: String,
+        default: new Date().toISOString().split('T')[0],
     }
 })
 
